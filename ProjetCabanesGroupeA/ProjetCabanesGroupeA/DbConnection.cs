@@ -8,7 +8,7 @@ using MySql.Data.Types;
 using System.Windows.Forms;
 
 
-namespace ProjetCabanesGroupeA
+namespace System.ProjetCabanesGroupeA
 {
     class DbConnection
     {
