@@ -137,17 +137,21 @@ namespace System.ProjetCabanesGroupeA
                 this.CloseConnection();
             }
         }
-
+//************* Prend toute les informations des cabanes dans une liste
         //Select statement
         public List<string>[] Select()
         {
-            string query = "SELECT * FROM tableinfo";
+            string query = "SELECT * FROM t_cabanes";
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[3];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
+            list[3] = new List<string>();
+            list[4] = new List<string>();
+            list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -160,9 +164,13 @@ namespace System.ProjetCabanesGroupeA
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    list[0].Add(dataReader["id_cabane"] + "");
+                    list[1].Add(dataReader["nom"] + "");
+                    list[2].Add(dataReader["altitude"] + "");
+                    list[3].Add(dataReader["nb_lit"] + "");
+                    list[4].Add(dataReader["douche"] + "");
+                    list[5].Add(dataReader["tarif"] + "");
+                    list[6].Add(dataReader["id_visite"] + "");
                 }
 
                 //close Data Reader
