@@ -34,7 +34,7 @@ namespace ProjetCabanesGroupeA
         {
             MySqlCommand cmd = new MySqlCommand();
 
-            cmd.CommandText = "SELECT * FROM t_visites WHERE id_visite =" + list[0] + "AND date_visite=" + Convert.ToString(dtpDateVisite.Value);
+            cmd.CommandText = "SELECT * FROM t_visites WHERE id_visite =" + 2 + "AND date_visite=" + Convert.ToString(dtpDateVisite.Value);
             cmd.CommandType = CommandType.Text;
 
             lblRapport.Text = cmd.CommandText;
