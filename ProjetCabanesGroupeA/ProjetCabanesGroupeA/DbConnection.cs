@@ -84,9 +84,10 @@ namespace System.ProjetCabanesGroupeA
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert(string tablename, string fields, string values)
         {
-            string query = "INSERT INTO t_cabanes (nom_cabane, altitude, nombre_lit, douche, tarif) VALUES('cabaneTest1', 1815, 4, false, 1523)";
+            //string query = "INSERT INTO "+ tablename +" (nom_cabane, altitude, nombre_lit, douche, tarif) VALUES('cabaneTest1', 1815, 4, false, 1523)";
+            string query = "INSERT INTO " + tablename + fields + "VALUES" + values;
 
             //open connection
             if (this.OpenConnection() == true)

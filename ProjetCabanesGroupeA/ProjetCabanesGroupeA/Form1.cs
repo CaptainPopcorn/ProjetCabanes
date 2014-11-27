@@ -25,7 +25,7 @@ namespace ProjetCabanesGroupeA
         private void Form1_Load(object sender, EventArgs e)
         {
             var connexion = new DbConnection();
-            connexion.Insert();
+            connexion.Insert("t_cabanes", "(nom_cabane, altitude, nombre_lit, douche, tarif)", "('cabaneTest1', 1815, 4, false, 1523)");
         }
 
 
