@@ -67,8 +67,6 @@
             // 
             // fileSystemWatcher1
             // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
             // 
             // Form1
             // 
@@ -82,7 +80,6 @@
             this.Name = "Form1";
             this.Text = "Cabanes";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
