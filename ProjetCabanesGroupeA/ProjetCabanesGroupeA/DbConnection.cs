@@ -86,7 +86,6 @@ namespace System.ProjetCabanesGroupeA
         //Insert statement
         public void Insert(string tablename, string fields, string values)
         {
-            //string query = "INSERT INTO "+ tablename +" (nom_cabane, altitude, nombre_lit, douche, tarif) VALUES('cabaneTest1', 1815, 4, false, 1523)";
             string query = "INSERT INTO " + tablename + fields + "VALUES" + values;
 
             //open connection
@@ -104,9 +103,9 @@ namespace System.ProjetCabanesGroupeA
         }
 
         //Update statement
-        public void Update()
+        public void Update(string query)
         {
-            string query = "UPDATE t_cabanes SET name='Joe', age='22' WHERE name='John Smith'";
+            //string query = "UPDATE t_cabanes SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -127,9 +126,9 @@ namespace System.ProjetCabanesGroupeA
         }
 
         //Delete statement
-        public void Delete()
+        public void Delete(string query)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+            //string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
             if (this.OpenConnection() == true)
             {
@@ -190,9 +189,9 @@ namespace System.ProjetCabanesGroupeA
         }
 
         //Count statement
-        public int Count()
+        public int Count(string tablename)
         {
-            string query = "SELECT Count(*) FROM tableinfo";
+            string query = "SELECT Count(*) FROM " + tablename;
             int Count = -1;
 
             //Open Connection
