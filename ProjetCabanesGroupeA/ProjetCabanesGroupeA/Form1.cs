@@ -8,25 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.ProjetCabanesGroupeA;
 
 namespace ProjetCabanesGroupeA
 {
 
     public partial class Form1 : Form
-    {
-        
-        //string[] cabane = { "1", "First Cabane", "1230", "13", "false", "200", "yolo" };        
+    {      
             
         public Form1()
         {
             InitializeComponent();
-   
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            var connexion = new DbConnection();
+            connexion.Insert();
         }
 
 

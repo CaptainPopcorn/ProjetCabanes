@@ -27,10 +27,10 @@ namespace System.ProjetCabanesGroupeA
         //Initialize values
         private void Initialize()
         {
-            server = "localhost";//"cfpi-r123pc01";
-            database = "bd_cabane";//"cabane_a";
-            uid = "root";//"UserGroupeA";
-            password = "";//"SuperCabaneA";
+            server = "localhost";       //"cfpi-r123pc01";
+            database = "cabanes";       //"cabane_a";
+            uid = "root";               //"UserGroupeA";
+            password = "";              //"SuperCabaneA";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + 
 		    database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -86,7 +86,7 @@ namespace System.ProjetCabanesGroupeA
         //Insert statement
         public void Insert()
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            string query = "INSERT INTO t_cabanes (nom_cabane, altitude, nombre_lit, douche, tarif) VALUES('cabaneTest1', 1815, 4, false, 1523)";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -105,7 +105,7 @@ namespace System.ProjetCabanesGroupeA
         //Update statement
         public void Update()
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query = "UPDATE t_cabanes SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
             if (this.OpenConnection() == true)
