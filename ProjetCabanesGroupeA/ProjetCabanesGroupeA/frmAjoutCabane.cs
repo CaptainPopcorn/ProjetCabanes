@@ -21,9 +21,22 @@ namespace ProjetCabanesGroupeA
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!(txtbNom.Text == "") & !(txtbAltitude.Text == "") & !(txtbNbLit.Text == "") & !(txtbDouche.Text == "") & !(txtbTarif.Text == "")){
+            if (!(txtbNom.Text == "") & !(txtbAltitude.Text == "") & !(txtbNbLit.Text == "") & !(txtbTarif.Text == "")){
                 var connexion = new DbConnection();
-                connexion.Insert("t_cabanes", "(nom_cabane, altitude, nombre_lit, douche, tarif)", "('" + txtbNom.Text + "'," + txtbAltitude.Text + "," + txtbNbLit.Text + "," + txtbDouche.Text + ",'" + txtbTarif.Text + "')");
+                connexion.Insert(
+                    "t_cabanes", 
+                    "(nom_cabane, altitude, nombre_lit, douche, tarif)", 
+                    "('" + txtbNom.Text + "'," + txtbAltitude.Text + "," + txtbNbLit.Text + "," + ckbDouche.Checked + ",'" + txtbTarif.Text + "')"
+                );
+                frmAjoutCabane.ActiveForm.Close();
+            }
+        }
+
+        private void txtbNbLit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
