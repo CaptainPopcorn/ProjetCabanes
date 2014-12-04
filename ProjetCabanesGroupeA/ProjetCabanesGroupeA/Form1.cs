@@ -24,8 +24,7 @@ namespace ProjetCabanesGroupeA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var connexion = new DbConnection();
-            connexion.Delete("DELETE FROM t_cabanes WHERE nom_cabane='cabaneTest1'");
+            
         }
 
 
@@ -37,6 +36,12 @@ namespace ProjetCabanesGroupeA
             cmd.CommandType = CommandType.Text;
 
             lblRapport.Text = cmd.CommandText;
+        }
+
+        private void ajouterCabaneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAjoutCabane formAddCabane = new frmAjoutCabane();
+            formAddCabane.Show();
         }
     }
 }
