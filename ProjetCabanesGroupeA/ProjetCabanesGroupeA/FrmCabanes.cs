@@ -24,7 +24,7 @@ namespace ProjetCabanesGroupeA
 
         public void PrintCabins(ListBox lbx)
         {
-            
+            var connexion = new DbConnection();
             var nbCabanes = connexion.Count("t_cabanes");
             TCabane[] cabanes = new TCabane[nbCabanes];
             lbx.Items.Clear();
