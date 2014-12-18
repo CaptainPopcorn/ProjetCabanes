@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ProjetCabanesGroupeA;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,7 +31,6 @@ namespace ProjetCabanesGroupeA
 
             var connection = new MySqlConnection(connectionString);
             //**************************************************************
-            //var connection = new DbConnection();
             MySqlCommand cmd = new MySqlCommand();
 
             cmd.CommandText = "SELECT * FROM t_visites WHERE id_visite =" + 2 + "AND date_visite=" + Convert.ToString(dtpDateVisite.Value);

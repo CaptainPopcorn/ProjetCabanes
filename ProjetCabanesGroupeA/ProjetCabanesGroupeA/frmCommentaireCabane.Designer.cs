@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblCommentaire = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
-            this.lblCommentaire = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.lblCommentaire);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNom);
@@ -48,6 +48,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Commentaire de la cabane";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(96, 239);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 15;
+            this.btnClose.Text = "Quitter";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblCommentaire
+            // 
+            this.lblCommentaire.AutoSize = true;
+            this.lblCommentaire.Location = new System.Drawing.Point(11, 53);
+            this.lblCommentaire.Name = "lblCommentaire";
+            this.lblCommentaire.Size = new System.Drawing.Size(35, 13);
+            this.lblCommentaire.TabIndex = 14;
+            this.lblCommentaire.Text = "label2";
             // 
             // label1
             // 
@@ -69,25 +88,6 @@
             this.lblNom.TabIndex = 13;
             this.lblNom.Text = "lblNom";
             // 
-            // lblCommentaire
-            // 
-            this.lblCommentaire.AutoSize = true;
-            this.lblCommentaire.Location = new System.Drawing.Point(11, 53);
-            this.lblCommentaire.Name = "lblCommentaire";
-            this.lblCommentaire.Size = new System.Drawing.Size(35, 13);
-            this.lblCommentaire.TabIndex = 14;
-            this.lblCommentaire.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(96, 239);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmCommentaireCabane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +96,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCommentaireCabane";
             this.Text = "Commentaire de Cabane";
+            this.Load += new System.EventHandler(this.frmCommentaireCabane_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -108,6 +109,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblCommentaire;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

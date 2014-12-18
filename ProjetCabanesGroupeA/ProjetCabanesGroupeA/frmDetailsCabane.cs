@@ -14,9 +14,12 @@ namespace ProjetCabanesGroupeA
 {
     public partial class frmDetailsCabane : Form
     {
-        public frmDetailsCabane()
+        private int idCabaneG;
+
+        public frmDetailsCabane(int idCabane)
         {
             InitializeComponent();
+            idCabaneG = idCabane;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,11 +28,6 @@ namespace ProjetCabanesGroupeA
         }
 
         private void frmDetailsCabane_Load(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
         {
             var server = "127.0.0.1";//"cfpi-r123pc01";
             var database = "cabanes";//"cabane_a";
@@ -45,7 +43,7 @@ namespace ProjetCabanesGroupeA
 
             cmd.Connection = connection;
             connection.Open();
-            cmd.CommandText = "Select * from t_cabanes  where id_cabane=1";
+            cmd.CommandText = "Select * from t_cabanes  where id_cabane=" + idCabaneG;
             cmd.CommandType = CommandType.Text;
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -68,6 +66,11 @@ namespace ProjetCabanesGroupeA
                 }
 
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

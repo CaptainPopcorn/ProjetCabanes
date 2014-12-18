@@ -20,6 +20,10 @@ namespace System.ProjetCabanesGroupeA
         public bool douche;
         public string tarif;
         public int idVisite;
+        public string Nom()
+        {
+            return nomCabane;
+        }
     }
     class DbConnection
     {
