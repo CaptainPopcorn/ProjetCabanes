@@ -144,6 +144,7 @@
             this.Controls.Add(this.dtpDateVisite);
             this.Name = "frmRappCabane";
             this.Text = "frmRappCabane";
+            this.Load += new System.EventHandler(this.frmRappCabane_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -60,8 +60,6 @@ namespace ProjetCabanesGroupeA
         {
    
             PrintCabins(LbxCabin);
-            frmAjoutCabane formAddCabane = new frmAjoutCabane();
-            formAddCabane.Show();
         }
     }
 }

@@ -133,5 +133,10 @@ namespace ProjetCabanesGroupeA
 
             }
         }
+
+        private void frmRappCabane_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
