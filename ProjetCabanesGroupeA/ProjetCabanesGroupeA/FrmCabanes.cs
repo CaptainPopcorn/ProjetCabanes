@@ -61,7 +61,6 @@ namespace ProjetCabanesGroupeA
         }
         private void ajouterCabaneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-   
             PrintCabins(LbxCabin);
         }
 
@@ -103,6 +102,12 @@ namespace ProjetCabanesGroupeA
                 details.Show();
             }
               
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAjouterCabane AjouterCabane = new frmAjouterCabane();
+            AjouterCabane.Show();
         }
     }
 }

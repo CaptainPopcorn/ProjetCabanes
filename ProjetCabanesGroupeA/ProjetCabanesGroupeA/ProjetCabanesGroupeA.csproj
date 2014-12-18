@@ -61,6 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbConnection.cs" />
+    <Compile Include="frmAjouterCabane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjouterCabane.Designer.cs">
+      <DependentUpon>frmAjouterCabane.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetailsCabane.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAjouterCabane.resx">
+      <DependentUpon>frmAjouterCabane.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCabanes.resx">
       <DependentUpon>FrmCabanes.cs</DependentUpon>
     </EmbeddedResource>
