@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data.Types;
 using System.Windows.Forms;
+using System.Collections;
 
 
 namespace System.ProjetCabanesGroupeA
 {
+    public struct TCabane
+    {
+        public int idCabane;
+        public string nomCabane;
+        public int altitude;
+        public int nombreLit;
+        public bool douche;
+        public string tarif;
+        public int idVisite;
+    }
     class DbConnection
     {
         private MySqlConnection connection;
@@ -139,52 +150,46 @@ namespace System.ProjetCabanesGroupeA
         }
 //************* Prend toute les informations des cabanes dans une liste
         //Select statement
-        public List<string>[] Select()
+        public TCabane[] ReadCabanes()
         {
             string query = "SELECT * FROM t_cabanes";
+            int nbCabanes = Count("t_cabanes"), i = 0;
 
-            //Create a list to store the result
-            List<string>[] list = new List<string>[7];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-            list[3] = new List<string>();
-            list[4] = new List<string>();
-            list[5] = new List<string>();
-            list[6] = new List<string>();
+            TCabane[] cabanes = new TCabane[nbCabanes];        
 
             //Open connection
             if (this.OpenConnection() == true)
             {
-                //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
-                //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["id_cabane"] + "");
-                    list[1].Add(dataReader["nom"] + "");
-                    list[2].Add(dataReader["altitude"] + "");
-                    list[3].Add(dataReader["nb_lit"] + "");
-                    list[4].Add(dataReader["douche"] + "");
-                    list[5].Add(dataReader["tarif"] + "");
-                    list[6].Add(dataReader["id_visite"] + "");
+                    cabanes[i].idCabane = dataReader.GetInt32(0);
+                    cabanes[i].nomCabane = dataReader.GetString(1);
+                    cabanes[i].altitude = dataReader.GetInt32(2);
+                    cabanes[i].nombreLit = dataReader.GetInt32(3);
+                    cabanes[i].douche = dataReader.GetBoolean(4);
+                    cabanes[i].tarif = dataReader.GetString(5);
+                    if (!dataReader.IsDBNull(6))
+                    {
+                        cabanes[i].idVisite = dataReader.GetInt32(6);
+                    }
+
+                    i++;
                 }
 
                 //close Data Reader
                 dataReader.Close();
-
                 //close Connection
                 this.CloseConnection();
-
                 //return list to be displayed
-                return list;
+                return cabanes;
             }
             else
             {
-                return list;
+                return cabanes;
             }
         }
 

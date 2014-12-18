@@ -13,18 +13,32 @@ using System.ProjetCabanesGroupeA;
 namespace ProjetCabanesGroupeA
 {
 
-    public partial class Form1 : Form
+    public partial class FrmCabanes : Form
     {      
             
-        public Form1()
+        public FrmCabanes()
         {
             InitializeComponent();
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void PrintCabins(ListBox lbx)
         {
             
+            var nbCabanes = connexion.Count("t_cabanes");
+            TCabane[] cabanes = new TCabane[nbCabanes];
+            lbx.Items.Clear();
+            cabanes = connexion.ReadCabanes();
+            
+            foreach (TCabane cabane in cabanes)
+            {
+                lbx.Items.Add(cabane.nomCabane);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -38,8 +52,14 @@ namespace ProjetCabanesGroupeA
             lblRapport.Text = cmd.CommandText;
         }
 
+        private void BtnShowListCabin_Click(object sender, EventArgs e)
+        {            
+            PrintCabins(LbxCabin);
+        }
         private void ajouterCabaneToolStripMenuItem_Click(object sender, EventArgs e)
         {
+   
+            PrintCabins(LbxCabin);
             frmAjoutCabane formAddCabane = new frmAjoutCabane();
             formAddCabane.Show();
         }

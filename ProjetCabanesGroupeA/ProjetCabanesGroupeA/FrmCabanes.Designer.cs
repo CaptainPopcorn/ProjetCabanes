@@ -1,6 +1,6 @@
 ﻿namespace ProjetCabanesGroupeA
 {
-    partial class Form1
+    partial class FrmCabanes
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -42,7 +42,7 @@
             // lblRapport
             // 
             this.lblRapport.AutoSize = true;
-            this.lblRapport.Location = new System.Drawing.Point(108, 131);
+            this.lblRapport.Location = new System.Drawing.Point(171, 117);
             this.lblRapport.Name = "lblRapport";
             this.lblRapport.Size = new System.Drawing.Size(35, 13);
             this.lblRapport.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // dtpDateVisite
             // 
-            this.dtpDateVisite.Location = new System.Drawing.Point(37, 81);
+            this.dtpDateVisite.Location = new System.Drawing.Point(174, 80);
             this.dtpDateVisite.Name = "dtpDateVisite";
             this.dtpDateVisite.Size = new System.Drawing.Size(200, 20);
             this.dtpDateVisite.TabIndex = 1;
@@ -65,6 +65,7 @@
             this.BtnShowListCabin.TabIndex = 0;
             this.BtnShowListCabin.Text = "Affiche Liste Cabane";
             this.BtnShowListCabin.UseVisualStyleBackColor = true;
+            this.BtnShowListCabin.Click += new System.EventHandler(this.BtnShowListCabin_Click);
             // 
             // LbxCabin
             // 
@@ -73,9 +74,6 @@
             this.LbxCabin.Name = "LbxCabin";
             this.LbxCabin.Size = new System.Drawing.Size(120, 251);
             this.LbxCabin.TabIndex = 1;
-            // 
-            // menuStrip1
-            // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);

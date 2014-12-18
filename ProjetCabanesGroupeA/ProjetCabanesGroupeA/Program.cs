@@ -17,7 +17,7 @@ namespace ProjetCabanesGroupeA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmRappCabane());
+            Application.Run(new FrmCabanes());
         }
     }
 }
